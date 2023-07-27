@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["xander <moroz070688@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "0.99"
+uvicorn = {extras = ["standart"], version = "^0.23.1"}
+databases = "^0.7.0"
+asyncpg = "^0.28.0"
+python-multipart = "^0.0.6"
+alembic = "^1.11.1"
+pre-commit = "^3.3.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
