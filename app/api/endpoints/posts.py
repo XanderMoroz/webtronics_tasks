@@ -23,7 +23,7 @@ async def read_posts(page: int = 1):
 
 @post_router.get("/{post_id}", response_model=PostDetailsModel)
 async def get_post_by_id(post_id: int):
-    """**Get post by id** / Получить рецепт по идентификатору"""
+    """**Get post by id** / Получить пост по идентификатору"""
     post = await post_utils.get_post(post_id)
     if post is None:
         raise HTTPException(
@@ -39,7 +39,7 @@ async def update_post_by_id(
         post_data: PostModel,
         current_user=Depends(get_current_user)
 ):
-    """**Update post by id** / Редактировать рецепт по идентификатору"""
+    """**Update post by id** / Редактировать пост по идентификатору"""
     post = await post_utils.get_post(post_id)
     if post is None:
         raise HTTPException(
@@ -61,7 +61,7 @@ async def delete_post_by_id(
         post_id: int,
         current_user=Depends(get_current_user)
 ):
-    """**Delete post by id** / Редактировать рецепт по идентификатору"""
+    """**Delete post by id** / Редактировать пост по идентификатору"""
     post = await post_utils.get_post(post_id)
     if post is None:
         raise HTTPException(

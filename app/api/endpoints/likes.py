@@ -10,7 +10,7 @@ likes_router = APIRouter()
 
 @likes_router.post("/like/{post_id}")
 async def add_post_like(post_id: int, current_user=Depends(get_current_user)):
-    """**Get recipe by id** / Получить рецепт по идентификатору"""
+    """**Add like by post_id** / Добавить лайк публикации"""
     post = await post_utils.get_post(post_id)
     if post == None:
         raise HTTPException(
@@ -30,7 +30,7 @@ async def add_post_like(post_id: int, current_user=Depends(get_current_user)):
 
 @likes_router.delete("/like/{post_id}")
 async def remove_post_like(post_id: int, current_user=Depends(get_current_user)):
-    """**Get recipe by id** / Получить рецепт по идентификатору"""
+    """**Remove like by post_id** / Убрать лайк публикации"""
     post = await post_utils.get_post(post_id)
     if post is None:
         raise HTTPException(
@@ -50,7 +50,7 @@ async def remove_post_like(post_id: int, current_user=Depends(get_current_user))
 
 @likes_router.post("/dislike/{post_id}")
 async def add_post_dislike(post_id: int, current_user=Depends(get_current_user)):
-    """**Get recipe by id** / Получить рецепт по идентификатору"""
+    """**Add dislike by post_id** / Добавить дизлайк публикации"""
     post = await post_utils.get_post(post_id)
     if post == None:
         raise HTTPException(
@@ -70,7 +70,7 @@ async def add_post_dislike(post_id: int, current_user=Depends(get_current_user))
 
 @likes_router.delete("/dislike/{post_id}")
 async def remove_post_dislike(post_id: int, current_user=Depends(get_current_user)):
-    """**Get recipe by id** / Получить рецепт по идентификатору"""
+    """**Remove like by post_id** / Убрать дизлайк публикации"""
     post = await post_utils.get_post(post_id)
     if post is None:
         raise HTTPException(
